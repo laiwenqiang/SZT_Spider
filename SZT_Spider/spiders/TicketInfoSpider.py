@@ -17,6 +17,14 @@ class TicketinfospiderSpider(scrapy.Spider):
 
     def parse_page(self, response):
         # print response.text
-        for val in response.xpath('//td[@id="cardRealAmt"]/text()').extract():  # 数组
+        card_real_amt = '//td[@id="cardRealAmt"]'
+
+        for val in response.xpath(card_real_amt + '/text()').extract():  # 数组
+            print val
+
+        for val in response.xpath(card_real_amt + '/../td[2]/text()').extract():
+            print val
+
+        for val in response.xpath(card_real_amt + '/../td[4]/text()').extract():
             print val
         pass
