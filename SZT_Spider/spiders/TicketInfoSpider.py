@@ -19,12 +19,10 @@ class TicketinfospiderSpider(scrapy.Spider):
         # print response.text
         card_real_amt = '//td[@id="cardRealAmt"]'
 
-        for val in response.xpath(card_real_amt + '/text()').extract():  # 数组
-            print val
+        print response.xpath(card_real_amt + '/text()').extract()[0]  # 数组
 
-        for val in response.xpath(card_real_amt + '/../td[2]/text()').extract():
-            print val
+        print response.xpath(card_real_amt + '/../td[2]/text()').extract()[0]
 
-        for val in response.xpath(card_real_amt + '/../td[4]/text()').extract():
-            print val
+        print response.xpath(card_real_amt + '/../td[4]/text()').extract()[0]
+
         pass
