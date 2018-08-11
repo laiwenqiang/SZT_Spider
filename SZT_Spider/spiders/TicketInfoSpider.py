@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import scrapy
+from SZT_Spider.items import TicketInfoItem
 
 
 class TicketinfospiderSpider(scrapy.Spider):
@@ -16,13 +17,20 @@ class TicketinfospiderSpider(scrapy.Spider):
         )
 
     def parse_page(self, response):
-        # print response.text
+        print response.text
         card_real_amt = '//td[@id="cardRealAmt"]'
 
-        print response.xpath(card_real_amt + '/text()').extract()[0]  # 数组
+        item = TicketInfoItem()
 
-        print response.xpath(card_real_amt + '/../td[2]/text()').extract()[0]
+        # item['card_amt'] = response.xpath(card_real_amt + '/text()').extract()[0]  # 数组
 
-        print response.xpath(card_real_amt + '/../td[4]/text()').extract()[0]
+        # item['card_no'] = response.xpath(card_real_amt + '/../td[2]/text()').extract()[0]
 
-        pass
+        # item['last_use_time'] = response.xpath(card_real_amt + '/../td[4]/text()').extract()[0]
+
+        item['card_no'] = '698474623'
+        item['card_amt'] = 100.01
+        item['last_use_time'] = '2018-05-11 19:31:31'
+        print item
+
+        return item

@@ -15,6 +15,14 @@ SPIDER_MODULES = ['SZT_Spider.spiders']
 NEWSPIDER_MODULE = 'SZT_Spider.spiders'
 
 
+# Mysql数据库的配置信息
+MYSQL_HOST = '127.0.0.1'
+MYSQL_DBNAME = 'SZT'         # 数据库名字，请修改
+MYSQL_USER = 'root'           # 数据库账号，请修改
+MYSQL_PASSWD = 'root'         # 数据库密码，请修改
+MYSQL_PORT = 3306             # 数据库端口，在dbhelper中使用
+
+
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'SZT_Spider (+http://www.yourdomain.com)'
 
@@ -64,9 +72,10 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'SZT_Spider.pipelines.SztSpiderPipeline': 300,
-#}
+ITEM_PIPELINES = {
+    'SZT_Spider.pipelines.SztSpiderPipeline': 300,
+}
+
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html

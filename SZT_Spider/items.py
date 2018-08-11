@@ -15,6 +15,7 @@ class SztSpiderItem(scrapy.Item):
 
 
 class TicketInfoItem(scrapy.Item):
-    card_no = scrapy.Field
-    card_amt = scrapy.Field
-    last_use_time = scrapy.Field
+    card_no = scrapy.Field()
+    card_amt = scrapy.Field()
+    last_use_time = scrapy.Field()
+    pass
