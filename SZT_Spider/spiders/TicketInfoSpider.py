@@ -3,7 +3,7 @@ import scrapy
 from SZT_Spider.items import TicketInfoItem
 
 
-class TicketinfospiderSpider(scrapy.Spider):
+class TicketinfoSpider(scrapy.Spider):
     name = 'TicketInfoSpider'
     allowed_domains = ['shenzhentong.com']
 

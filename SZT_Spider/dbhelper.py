@@ -1,4 +1,5 @@
 #coding:utf-8
+
 import MySQLdb
 from scrapy.utils.project import get_project_settings  # 引入settings配置
 
@@ -95,7 +96,7 @@ class TestDBHelper():
 
     # 创建表操作
     def testCreateTable(self):
-        sql = "create table if not exists ticket_info(id int primary key auto_increment, card_no varchar(50), card_amt varchar(50), last_use_time varchar(50))"
+        sql = "create table if not exists ticket_info(id int primary key auto_increment, card_no varchar(50), card_amt varchar(50), last_use_time datetime)"
         self.dbHelper.createTable(sql)
 
     # 插入数据，这里可以针对不同的表插入数据，piplines传递过来的item存储的是所有数据，可以分类插入不同的表
